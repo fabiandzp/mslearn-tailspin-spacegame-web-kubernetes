@@ -49,7 +49,7 @@ stages:
     displayName: Deploy
     pool:
       vmImage: 'ubuntu-24.04'
-    environment: 'spike.default'
+    environment: 'Dev'
     variables:
     - group: Release
     strategy:
@@ -78,7 +78,7 @@ stages:
               connectionType: azureResourceManager
               azureSubscriptionConnection: 'Kubernetes Cluster Connection'
               azureResourceGroup: 'tailspin-space-game-rg'
-              kubernetesCluster: 'tailspinspacegame-24591'
+              kubernetesCluster: 'tailspinspacegame-22620'
               namespace: 'default'
               manifests: |
                 $(Pipeline.Workspace)/manifests/deployment.yml
